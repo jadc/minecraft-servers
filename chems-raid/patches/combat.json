@@ -1,0 +1,19 @@
+{
+    "file": "/data/plugins/OldCombatMechanics/config.yml",
+    "ops": [
+        {
+            "$set": {
+                "path": "$.disable-crafting.enabled",
+                "value-type": "bool",
+                "value": false
+            }
+        },
+        {
+            "$set": {
+                "path": "$.disable-offhand.enabled",
+                "value-type": "bool",
+                "value": false
+            }
+        }
+    ]
+}

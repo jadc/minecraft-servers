@@ -1,0 +1,19 @@
+{
+    "file": "/data/pufferfish.yml",
+    "ops": [
+        {
+            "$set": {
+                "path": "$.dab.enabled",
+                "value-type": "bool",
+                "value": true
+            }
+        },
+        {
+            "$set": {
+                "path": "$.inactive-goal-selector-throttle",
+                "value-type": "bool",
+                "value": true
+            }
+        }
+    ]
+}

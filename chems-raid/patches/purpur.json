@@ -7,6 +7,14 @@
                 "value-type": "bool",
                 "value": true
             }
+        },
+        {
+            "$set": {
+                "path": "$.world-settings.default.mobs.dolphin.disable-treasure-searching",
+                "value-type": "bool",
+                "value": true
+            }
         }
+
     ]
 }

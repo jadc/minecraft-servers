@@ -1,0 +1,19 @@
+{
+    "file": "/data/config/paper-world-defaults.yml",
+    "ops": [
+        {
+            "$set": {
+                "path": "$.anticheat.anti-xray.enabled",
+                "value-type": "bool",
+                "value": true
+            }
+        },
+        {
+            "$set": {
+                "path": "$.anticheat.anti-xray.engine-mode",
+                "value-type": "int",
+                "value": 3
+            }
+        }
+    ]
+}
