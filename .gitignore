@@ -1,6 +1,1 @@
-*
-!*/
-!*.gitignore
-!*.yml
-!*.json
-!*.toml
+data/
