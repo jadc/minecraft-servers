@@ -1,20 +1,19 @@
 {
-    "file": "/data/purpur.yml",
+    "file": "/data/pufferfish.yml",
     "ops": [
         {
             "$set": {
-                "path": "$.settings.use-alternate-keepalive",
+                "path": "$.dab.enabled",
                 "value-type": "bool",
                 "value": true
             }
         },
         {
             "$set": {
-                "path": "$.world-settings.default.mobs.dolphin.disable-treasure-searching",
+                "path": "$.inactive-goal-selector-throttle",
                 "value-type": "bool",
                 "value": true
             }
         }
-
     ]
 }
