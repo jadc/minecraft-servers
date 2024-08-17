@@ -1,0 +1,12 @@
+{
+    "file": "/data/purpur.yml",
+    "ops": [
+        {
+            "$set": {
+                "path": "$.settings.use-alternate-keepalive",
+                "value-type": "bool",
+                "value": true
+            }
+        }
+    ]
+}

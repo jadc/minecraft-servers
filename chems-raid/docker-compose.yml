@@ -8,6 +8,7 @@ services:
             - "25565:25565"
         volumes:
             - ./data:/data
+            - ./patches:/patches
 
         environment:
             # Java Settings
@@ -39,7 +40,7 @@ services:
             ENFORCE_SECURE_PROFILE: false
             SYNC_CHUNK_WRITES: false
             MAX_CHAINED_NEIGHBOR_UPDATES: 10000
-            PATCH_DEFINITIONS: patches
+            PATCH_DEFINITIONS: /patches
 
             # Addons
             PLUGINS: |
