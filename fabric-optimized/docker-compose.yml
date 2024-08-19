@@ -1,5 +1,5 @@
 services:
-    mc:
+    server:
         image: itzg/minecraft-server
         restart: unless-stopped
         stdin_open: true
@@ -45,16 +45,32 @@ services:
             REMOVE_OLD_MODS: true
             MODRINTH_ALLOWED_VERSION_TYPE: alpha
             MODRINTH_PROJECTS: |
+                alternate-current
+                c2me-fabric
                 fabric-api
                 fabric-language-kotlin
-                no-chat-reports
-                spark
-                ledger
-                modernfix
+                faster-random
                 ferrite-core
-                lithium
-                vmp-fabric
-                c2me-fabric
                 krypton
+                ledger
+                lithium
+                modernfix
+                no-chat-reports
                 noisium
-                alternate-current
+                simple-voice-chat
+                spark
+                vmp-fabric
+    backup:
+        image: itzg/mc-backup
+        restart: unless-stopped
+        depends_on:
+            mc:
+                condition: service_healthy
+        environment:
+            BACKUP_INTERVAL: "12h"
+            PAUSE_IF_NO_PLAYERS: true
+            RCON_HOST: mc
+            INITIAL_DELAY: 0
+        volumes:
+            - ./data:/data:ro
+            - ./backups:/backups
