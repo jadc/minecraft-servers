@@ -44,5 +44,6 @@ services:
 
             # Addons
             PLUGINS: |
-                https://github.com/KaspianDev/AntiPopup/releases/download/b7a08d9/AntiPopup-9.2.jar
-                https://github.com/kernitus/BukkitOldCombatMechanics/releases/latest/download/OldCombatMechanics.jar
+                https://github.com/KaspianDev/AntiPopup/releases/download/499358a/AntiPopup-10.jar
+                https://github.com/jadc/ElytraFlight/releases/download/1.1/elytraflight-1.1.jar
+                https://cdn.modrinth.com/data/fALzjamp/versions/ytBhnGfO/Chunky-Bukkit-1.4.28.jar
