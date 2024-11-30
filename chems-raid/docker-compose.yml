@@ -13,14 +13,17 @@ services:
         environment:
             # Java Settings
             MEMORY: 16G
-            JVM_OPTS: "-Daikars.new.flags=true --add-modules=jdk.incubator.vector"
-            JVM_XX_OPTS: "-XX:+UseZGC -XX:+ZGenerational"
+            JVM_OPTS: "-Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true --add-modules=jdk.incubator.vector"
+            JVM_XX_OPTS: "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=15 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1"
+            #JVM_OPTS: "-Daikars.new.flags=true --add-modules=jdk.incubator.vector"
+            #JVM_XX_OPTS: "-XX:+UseZGC -XX:+ZGenerational"
 
             # Server Settings
-            TYPE: FOLIA
+            #TYPE: FOLIA
+            TYPE: PUFFERFISH
             VERSION: LATEST
             EULA: true
-            MOTD: "§4chems event"
+            MOTD: "§5chems event"
             ICON: "https://cdn.discordapp.com/icons/1115150825157824523/a_848a00bf7b93e2e29dda9111687cd9da.webp?size=64"
             ENABLE_AUTOPAUSE: true
             USE_SIMD_FLAGS: true
