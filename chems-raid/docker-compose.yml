@@ -13,14 +13,13 @@ services:
         environment:
             # Java Settings
             MEMORY: 16G
-            JVM_OPTS: "-Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true --add-modules=jdk.incubator.vector"
-            JVM_XX_OPTS: "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=15 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1"
-            #JVM_OPTS: "-Daikars.new.flags=true --add-modules=jdk.incubator.vector"
-            #JVM_XX_OPTS: "-XX:+UseZGC -XX:+ZGenerational"
+            JVM_OPTS: "--add-modules=jdk.incubator.vector"
+            JVM_XX_OPTS: "-XX:+AlwaysActAsServerClassMachine -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+ParallelRefProcEnabled -XX:+PerfDisableSharedMem -XX:+UnlockDiagnosticVMOptions -XX:+UnlockExperimentalVMOptions -XX:+UseCriticalJavaThreadPriority -XX:+UseFastUnorderedTimeStamps -XX:+UseG1GC -XX:+UseNUMA -XX:+UseVectorCmov -XX:-DontCompileHugeMethods -XX:AllocatePrefetchStyle=3 -XX:G1ConcMarkStepDurationMillis=5 -XX:G1HeapRegionSize=16M -XX:G1HeapWastePercent=5 -XX:G1MaxNewSizePercent=50 -XX:G1MixedGCCountTarget=3 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1NewSizePercent=28 -XX:G1RSetUpdatingPauseTimePercent=0 -XX:G1ReservePercent=15 -XX:G1ReservePercent=20 -XX:G1SATBBufferEnqueueingThresholdPercent=30 -XX:InitiatingHeapOccupancyPercent=10 -XX:MaxGCPauseMillis=130 -XX:MaxNodeLimit=240000 -XX:MaxTenuringThreshold=1 -XX:NmethodSweepActivity=1 -XX:NodeLimitFudgeFactor=8000 -XX:NonNMethodCodeHeapSize=12M -XX:NonProfiledCodeHeapSize=194M -XX:ProfiledCodeHeapSize=194M -XX:ReservedCodeCacheSize=400M -XX:SurvivorRatio=32 -XX:ThreadPriorityPolicy=1"
+            #JVM_XX_OPTS: "-XX:+AlwaysActAsServerClassMachine -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+PerfDisableSharedMem -XX:+UnlockDiagnosticVMOptions -XX:+UnlockExperimentalVMOptions -XX:+UseCriticalJavaThreadPriority -XX:+UseFastUnorderedTimeStamps -XX:+UseNUMA -XX:+UseVectorCmov -XX:+UseZGC -XX:+ZGenerational -XX:-DontCompileHugeMethods -XX:-ZProactive -XX:AllocatePrefetchStyle=1 -XX:MaxNodeLimit=240000 -XX:NmethodSweepActivity=1 -XX:NodeLimitFudgeFactor=8000 -XX:NonNMethodCodeHeapSize=12M -XX:NonProfiledCodeHeapSize=194M -XX:ProfiledCodeHeapSize=194M -XX:ReservedCodeCacheSize=400M -XX:ThreadPriorityPolicy=1"
 
             # Server Settings
             #TYPE: FOLIA
-            TYPE: PUFFERFISH
+            TYPE: PAPER
             VERSION: LATEST
             EULA: true
             MOTD: "§5chems event"
@@ -47,8 +46,8 @@ services:
 
             # Addons
             MODRINTH_PROJECTS: |
-                antipopup
                 chunky
                 viaversion
             PLUGINS: |
+                https://github.com/KaspianDev/AntiPopup/releases/download/499358a/AntiPopup-10.jar
                 https://github.com/jadc/ElytraFlight/releases/latest/download/elytraflight.jar
