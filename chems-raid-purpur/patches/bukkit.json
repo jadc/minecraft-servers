@@ -1,0 +1,103 @@
+{
+    "file": "/data/bukkit.yml",
+    "ops": [
+        {
+            "$set": {
+                "path": "$.spawn-limits.monsters",
+                "value-type": "int",
+                "value": 20
+            }
+        },
+        {
+            "$set": {
+                "path": "$.spawn-limits.animals",
+                "value-type": "int",
+                "value": 5
+            }
+        },
+        {
+            "$set": {
+                "path": "$.spawn-limits.water-animals",
+                "value-type": "int",
+                "value": 2
+            }
+        },
+        {
+            "$set": {
+                "path": "$.spawn-limits.water-ambient",
+                "value-type": "int",
+                "value": 2
+            }
+        },
+        {
+            "$set": {
+                "path": "$.spawn-limits.water-underground-creature",
+                "value-type": "int",
+                "value": 3
+            }
+        },
+        {
+            "$set": {
+                "path": "$.spawn-limits.axolotls",
+                "value-type": "int",
+                "value": 3
+            }
+        },
+        {
+            "$set": {
+                "path": "$.spawn-limits.ambient",
+                "value-type": "int",
+                "value": 1
+            }
+        },
+        {
+            "$set": {
+                "path": "$.ticks-per.animal-spawns",
+                "value-type": "int",
+                "value": 400
+            }
+        },
+        {
+            "$set": {
+                "path": "$.ticks-per.monster-spawns",
+                "value-type": "int",
+                "value": 10
+            }
+        },
+        {
+            "$set": {
+                "path": "$.ticks-per.water-spawns",
+                "value-type": "int",
+                "value": 400
+            }
+        },
+        {
+            "$set": {
+                "path": "$.ticks-per.water-ambient-spawns",
+                "value-type": "int",
+                "value": 400
+            }
+        },
+        {
+            "$set": {
+                "path": "$.ticks-per.water-underground-creature-spawns",
+                "value-type": "int",
+                "value": 400
+            }
+        },
+        {
+            "$set": {
+                "path": "$.ticks-per.axolotl-spawns",
+                "value-type": "int",
+                "value": 400
+            }
+        },
+        {
+            "$set": {
+                "path": "$.ticks-per.ambient-spawns",
+                "value-type": "int",
+                "value": 400
+            }
+        }
+    ]
+}
