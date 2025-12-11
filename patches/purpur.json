@@ -1,0 +1,20 @@
+{
+    "file": "/data/purpur.yml",
+    "ops": [
+        {
+            "$set": {
+                "path": "$.settings.use-alternate-keepalive",
+                "value-type": "bool",
+                "value": true
+            }
+        },
+        {
+            "$set": {
+                "path": "$.world-settings.default.mobs.dolphin.disable-treasure-searching",
+                "value-type": "bool",
+                "value": true
+            }
+        }
+
+    ]
+}
