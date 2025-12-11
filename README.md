@@ -1,6 +1,8 @@
 # minecraft-servers
 A collection of [itzg/docker-minecraft-server](https://github.com/itzg/docker-minecraft-server) Docker Compose files I have written for reference/reuse.
 
+Each server is in its own branch on this repo.
+
 ## Usage
 Ensure you have Docker installed.
 
