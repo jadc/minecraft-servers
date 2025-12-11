@@ -1,0 +1,76 @@
+services:
+    server:
+        image: itzg/minecraft-server
+        restart: unless-stopped
+        stdin_open: true
+        tty: true
+        ports:
+            - "25565:25565"
+        volumes:
+            - ./data:/data
+
+        environment:
+            # Java Settings
+            MEMORY: 16G
+            JVM_OPTS: "-Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true --add-modules=jdk.incubator.vector"
+            JVM_XX_OPTS: "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=15 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1"
+
+            # Server Settings
+            TYPE: FABRIC
+            VERSION: 1.21
+            EULA: true
+            MOTD: "§5\u2764\u2764\u2764"
+            ICON: "https://upload.wikimedia.org/wikipedia/commons/2/25/Pi%27erre_Bourne_-_The_Life_of_Pi%27erre_4.png"
+            ENABLE_WHITELIST: true
+            ENABLE_AUTOPAUSE: true
+
+            # Gameplay Settings
+            DIFFICULTY: hard
+            MAX_PLAYERS: 16
+            VIEW_DISTANCE: 12
+            SIMULATION_DISTANCE: 8
+
+            MAX_WORLD_SIZE: 10000
+            ENABLE_COMMAND_BLOCK: true
+            SNOOPER_ENABLED: false
+            SPAWN_PROTECTION: 0
+            PLAYER_IDLE_TIMEOUT: 15
+            MAX_TICK_TIME: -1
+            ENFORCE_SECURE_PROFILE: false
+            SYNC_CHUNK_WRITES: false
+            MAX_CHAINED_NEIGHBOR_UPDATES: 10000
+
+            # Addons
+            INITIAL_ENABLED_PACKS: "bundle"
+            REMOVE_OLD_MODS: true
+            MODRINTH_ALLOWED_VERSION_TYPE: alpha
+            MODRINTH_PROJECTS: |
+                alternate-current
+                c2me-fabric
+                fabric-api
+                fabric-language-kotlin
+                faster-random
+                ferrite-core
+                krypton
+                ledger
+                lithium
+                modernfix
+                no-chat-reports
+                noisium
+                simple-voice-chat
+                spark
+                vmp-fabric
+    backup:
+        image: itzg/mc-backup
+        restart: unless-stopped
+        depends_on:
+            mc:
+                condition: service_healthy
+        environment:
+            BACKUP_INTERVAL: "12h"
+            PAUSE_IF_NO_PLAYERS: true
+            RCON_HOST: mc
+            INITIAL_DELAY: 0
+        volumes:
+            - ./data:/data:ro
+            - ./backups:/backups
