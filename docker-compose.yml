@@ -18,7 +18,7 @@ services:
 
             # Server Settings
             TYPE: PURPUR
-            VERSION: LATEST
+            VERSION: 1.21.10
             EULA: true
             MOTD: "§4chems event"
             ICON: "https://cdn.discordapp.com/icons/1115150825157824523/a_848a00bf7b93e2e29dda9111687cd9da.webp?size=64"
@@ -46,4 +46,5 @@ services:
             PLUGINS: |
                 https://github.com/KaspianDev/AntiPopup/releases/download/38def2a/AntiPopup-12.3.jar
                 https://github.com/jadc/ElytraFlight/releases/download/1.1/elytraflight-1.1.jar
-                https://www.patreon.com/file?h=136053027&m=513054290
+                https://cdn.modrinth.com/data/Lu3KuzdV/versions/anOhDobp/CoreProtect-CE-23.0.jar
+                https://cdn.modrinth.com/data/P1OZGk5p/versions/3CsJ3zmH/ViaVersion-5.5.2-SNAPSHOT.jar
