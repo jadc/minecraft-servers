@@ -43,6 +43,15 @@ services:
             PATCH_DEFINITIONS: /patches
 
             # Addons
+            DATAPACKS: |
+                https://github.com/jadc/minecraft-servers/releases/download/20251208/Modified.GBG.-.Data.V1.26.5.zip
+                https://github.com/jadc/minecraft-servers/releases/download/20251208/Chems.Guns.-.Data.V1.1.zip
+            REMOVE_OLD_DATAPACKS: true
+
+            RESOURCE_PACK: https://github.com/jadc/minecraft-servers/releases/download/20251208/Modified.GBG.-.Data.V1.26.5.zip
+            RESOURCE_PACK_SHA1: ae1cbad3ff26ee2b41c661b52e00a7c88ecb9791
+            RESOURCE_PACK_ENFORCE: true
+
             PLUGINS: |
                 https://github.com/KaspianDev/AntiPopup/releases/download/38def2a/AntiPopup-12.3.jar
                 https://github.com/jadc/ElytraFlight/releases/download/1.1/elytraflight-1.1.jar
