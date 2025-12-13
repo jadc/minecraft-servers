@@ -44,12 +44,12 @@ services:
 
             # Addons
             DATAPACKS: |
-                https://github.com/jadc/minecraft-servers/releases/download/20251208/Modified.GBG.-.Data.V1.26.5.zip
-                https://github.com/jadc/minecraft-servers/releases/download/20251208/Chems.Guns.-.Data.V1.1.zip
+                https://github.com/jadc/minecraft-servers/releases/download/20251212/gbg.zip
+                https://github.com/jadc/minecraft-servers/releases/download/20251212/cg.zip
             REMOVE_OLD_DATAPACKS: true
 
-            RESOURCE_PACK: https://github.com/jadc/minecraft-servers/releases/download/20251208/Modified.GBG.-.Data.V1.26.5.zip
-            RESOURCE_PACK_SHA1: ae1cbad3ff26ee2b41c661b52e00a7c88ecb9791
+            RESOURCE_PACK: https://github.com/jadc/minecraft-servers/releases/download/20251212/gbgcg.zip
+            RESOURCE_PACK_SHA1: 807674a1937326bb1f4da86b28e774682f84be1b
             RESOURCE_PACK_ENFORCE: true
 
             PLUGINS: |
