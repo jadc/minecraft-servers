@@ -20,8 +20,8 @@ services:
             TYPE: PURPUR
             VERSION: 1.21.10
             EULA: true
-            MOTD: "§4chems event"
-            ICON: "https://cdn.discordapp.com/icons/1115150825157824523/a_848a00bf7b93e2e29dda9111687cd9da.webp?size=64"
+            MOTD: "§3gem"
+            ICON: "https://media.discordapp.net/stickers/1444018016495996948.webp?size=64&quality=lossless"
             ENABLE_AUTOPAUSE: true
             USE_SIMD_FLAGS: true
 
@@ -54,6 +54,4 @@ services:
 
             PLUGINS: |
                 https://github.com/KaspianDev/AntiPopup/releases/download/38def2a/AntiPopup-12.3.jar
-                https://github.com/jadc/ElytraFlight/releases/download/1.1/elytraflight-1.1.jar
-                https://cdn.modrinth.com/data/Lu3KuzdV/versions/anOhDobp/CoreProtect-CE-23.0.jar
                 https://cdn.modrinth.com/data/P1OZGk5p/versions/wJ7j2lM6/ViaVersion-5.6.0.jar
