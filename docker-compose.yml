@@ -14,6 +14,7 @@ services:
             VERSION: 1.20.1
             CF_SLUG: soulrend
             CF_API_KEY: ${CF_API_KEY}
+            CF_EXCLUDE_MODS: epicfightcurioscompat  # Fix bug in pack
             EULA: true
             MOTD: "§4james screaming simulator 2"
             ICON: "https://media.forgecdn.net/avatars/thumbnails/1808/526/256/256/639144070150898549.png"
