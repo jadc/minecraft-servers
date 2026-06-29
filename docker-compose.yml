@@ -16,11 +16,13 @@ services:
             CF_API_KEY: ${CF_API_KEY}
             CF_EXCLUDE_MODS: epicfightcurioscompat  # Fix bug in pack
             EULA: true
-            MOTD: "§4james screaming simulator 2"
+            MOTD: "§4james screaming simulator"
             ICON: "https://media.forgecdn.net/avatars/thumbnails/1808/526/256/256/639144070150898549.png"
             ENABLE_WHITELIST: true
-            ENABLE_AUTOPAUSE: true
             ENABLE_ROLLING_LOGS: true
+
+            ENABLE_AUTOPAUSE: true
+            AUTOPAUSE_TIMEOUT_EST: 900
 
             # Java Settings
             MEMORY: 16G
