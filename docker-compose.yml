@@ -64,7 +64,7 @@ services:
                 -XX:MaxTenuringThreshold=1
 
             # Gameplay Settings
-            DIFFICULTY: hard
+            DIFFICULTY: normal
             MAX_PLAYERS: 16
             VIEW_DISTANCE: 16
             ALLOW_FLIGHT: true
