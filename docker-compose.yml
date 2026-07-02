@@ -1,0 +1,64 @@
+services:
+    mc:
+        image: itzg/minecraft-server:java21
+        restart: unless-stopped
+        stdin_open: true
+        tty: true
+        ports:
+            - "25565:25565"
+        volumes:
+            - ./data:/data
+        environment:
+            # Server Settings
+            TYPE: AUTO_CURSEFORGE
+            VERSION: 1.21.1
+            CF_SLUG: all-the-mons
+            CF_API_KEY: ${CF_API_KEY}
+            EULA: true
+            MOTD: "§dAll The Goys"
+            ICON: "https://cdn.discordapp.com/emojis/1258237854799101972.webp?size=64"
+            ENABLE_WHITELIST: true
+            ENABLE_ROLLING_LOGS: true
+
+            ENABLE_AUTOPAUSE: true
+            AUTOPAUSE_TIMEOUT_EST: 900
+
+            # Java Settings
+            INIT_MEMORY: 12G
+            MAX_MEMORY: 12G
+            JVM_XX_OPTS: >-
+                -XX:+UseZGC
+                -XX:+ZGenerational
+                -XX:SoftMaxHeapSize=10g
+                -XX:+DisableExplicitGC
+                -XX:+AlwaysPreTouch
+                -XX:+PerfDisableSharedMem
+                -XX:+UseDynamicNumberOfGCThreads
+
+            # Gameplay Settings
+            DIFFICULTY: hard
+            MAX_PLAYERS: 16
+            VIEW_DISTANCE: 16
+            ALLOW_FLIGHT: true
+            ENABLE_COMMAND_BLOCK: true
+            SNOOPER_ENABLED: false
+            SPAWN_PROTECTION: 0
+            PLAYER_IDLE_TIMEOUT: 60
+            MAX_TICK_TIME: -1
+    mc-backup:
+        image: itzg/mc-backup
+        restart: unless-stopped
+        depends_on:
+            mc:
+                condition: service_healthy
+        environment:
+            BACKUP_INTERVAL: "1h"
+            PRUNE_BACKUPS_COUNT: 6
+            PAUSE_IF_NO_PLAYERS: true
+            RCON_HOST: mc
+            INITIAL_DELAY: 0
+            BACKUP_ON_STARTUP: false
+        volumes:
+            - ./data:/data:ro
+            - ./backups:/backups
+
