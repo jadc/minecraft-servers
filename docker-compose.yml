@@ -17,6 +17,7 @@ services:
             EULA: true
             MOTD: "§dAll The Goys"
             ICON: "https://cdn.discordapp.com/emojis/1258237854799101972.webp?size=64"
+            MODRINTH_PROJECTS: "datapack:cobbletowns-continued"
             ENABLE_WHITELIST: true
             ENABLE_ROLLING_LOGS: true
 
