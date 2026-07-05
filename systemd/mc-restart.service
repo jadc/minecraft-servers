@@ -1,0 +1,8 @@
+[Unit]
+Description=Restart Minecraft server
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c '\
+  docker exec mc rcon-cli kick @a Daily server restart is occurring, please wait a few minutes. && \
+  docker exec mc rcon-cli stop'
