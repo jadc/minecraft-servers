@@ -60,5 +60,5 @@ services:
             BACKUP_ON_STARTUP: false
         volumes:
             - ./data:/data:ro
-            - ./backups:/backups
+            - /data/mcbackups:/backups
 
